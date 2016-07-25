@@ -1,0 +1,117 @@
+﻿@model ArticleItemsViewModel
+
+<div class="row">
+
+	<!-- Blog Entries Column -->
+	<div class="col-md-8">
+
+		<h1 class="page-header">
+			Page Heading
+			<small>Secondary Text</small>
+		</h1>
+
+		@foreach(var item in Model.Items) {
+			<!-- First Blog Post -->
+			<h2>
+				<a href="#">@item.Title</a>
+			</h2>
+			<p class="lead">
+				by <a href="index.php">@item.BloggerName</a>
+			</p>
+			<p>
+				<span class="glyphicon glyphicon-time"></span> Posted on @item.PublishedDateUtc.ToString("f")
+			</p>
+			<hr>
+			if(!string.IsNullOrWhiteSpace(item.PhotoUrl)) {
+				<img class="img-responsive" src="@item.PhotoUrl" alt="">
+				<hr>
+			}
+			<p>@item.Description.Substring(0, item.Description.Length < 100 ? item.Description.Length : 100)</p>
+			<a class="btn btn-primary" href="@Url.Action(nameof(ArticleController.Details), new { id = @item.Id })">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+			<hr>
+		}
+		<!-- Pager -->
+		<ul class="pager">
+			@if(Model.Filter.Skip > 0) {
+				<li class="previous">
+					<a href="@Url.Action(nameof(ArticleController.List), nameof(Article), new {skip = Model.Filter.Skip - 10})">&larr; Older</a>
+				</li>
+			}
+			@if(Model.Filter.Skip + Model.Filter.Take < Model.Count) {
+				<li class="next">
+					<a href="@Url.Action(nameof(ArticleController.List), nameof(Article), new {skip = Model.Filter.Skip + 10})">Newer &rarr;</a>
+				</li>
+			}
+		</ul>
+
+	</div>
+
+	<!-- Blog Sidebar Widgets Column -->
+	<div class="col-md-4">
+
+		<!-- Blog Search Well -->
+		<div class="well">
+			<h4>Blog Search</h4>
+			<div class="input-group">
+				<input type="text" class="form-control">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+			</div>
+			<!-- /.input-group -->
+		</div>
+
+		<!-- Blog Categories Well -->
+		<div class="well">
+			<h4>Blog Categories</h4>
+			<div class="row">
+				<div class="col-lg-6">
+					<ul class="list-unstyled">
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+					</ul>
+				</div>
+				<!-- /.col-lg-6 -->
+				<div class="col-lg-6">
+					<ul class="list-unstyled">
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+						<li>
+							<a href="#">Category Name</a>
+						</li>
+					</ul>
+				</div>
+				<!-- /.col-lg-6 -->
+			</div>
+			<!-- /.row -->
+		</div>
+
+		<!-- Side Widget Well -->
+		<div class="well">
+			<h4>Side Widget Well</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+		</div>
+
+	</div>
+
+</div>

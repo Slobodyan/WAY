@@ -1,0 +1,7 @@
+﻿SET IDENTITY_INSERT [plt].[EntityInfo] ON
+INSERT INTO [plt].[EntityInfo] ([Id], [Guid], [EntityTypeId], [EntityStateId], [CreatedDateUtc]) VALUES
+(1, '9A2AAF2D-897D-4971-82F3-B9D80D3E88BD', 2, 2, '2016-04-01 12:00:00.001'),
+(2, 'BD161898-1973-493A-B7E1-EDC68CE590EB', 2, 2, '2016-04-01 12:00:00.002')
+
+--(, NEWID(), , , GETUTCDATE())
+SET IDENTITY_INSERT [plt].[EntityInfo] OFF

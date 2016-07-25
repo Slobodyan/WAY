@@ -1,0 +1,42 @@
+﻿@model RegisterViewModel
+
+<div class="row">
+	<div class="col-md-8">
+		<h1 class="page-header">
+			<small>Registration</small>
+		</h1>
+		<form asp-controller="@nameof(Blogger)" asp-action="@nameof(BloggerController.Register)" method="post" class="form-horizontal" role="form">
+			<div class="form-group">
+				<label asp-for="@Model.Email" class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-10">
+					<input asp-for="@Model.Email" type="email" class="form-control" placeholder="Email">
+				</div>
+			</div>
+			<div class="form-group">
+				<label asp-for="@Model.Password" class="col-sm-2 control-label">Password</label>
+				<div class="col-sm-10">
+					<input asp-for="@Model.Password" type="password" class="form-control" placeholder="Password">
+				</div>
+			</div>
+			<div class="form-group">
+				<label asp-for="@Model.Name" class="col-sm-2 control-label">Name</label>
+				<div class="col-sm-10">
+					<input asp-for="@Model.Name" type="text" class="form-control" placeholder="Name">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<div class="radio">
+						<label asp-for="@Model.EntityTypeId" class="radio-inline"><input asp-for="@Model.EntityTypeId" type="radio" value="@Dom.EntityType.User.Id">User</label>
+						<label asp-for="@Model.EntityTypeId" class="radio-inline"><input asp-for="@Model.EntityTypeId" type="radio" value="@Dom.EntityType.Organization.Id">Company</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Register</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

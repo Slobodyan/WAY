@@ -1,0 +1,12 @@
+﻿<form asp-controller="@nameof(Blogger)" asp-action="@nameof(BloggerController.Login)" method="post" class="form-inline" role="form">
+	<div class="form-group">
+		<label class="sr-only" for="Email"></label>
+		<input type="email" class="form-control" id="Email" name="Email" placeholder="Email">
+	</div>
+	<div class="form-group">
+		<label class="sr-only" for="Password"></label>
+		<input type="password" class="form-control" id="Password" name="Password" placeholder="Password">
+	</div>
+	<button type="submit" class="btn btn-default">Sign in</button>
+	<a asp-controller="@nameof(Blogger)" asp-action="@nameof(BloggerController.Register)" class="btn btn-default" role="button">Register</a>
+</form>

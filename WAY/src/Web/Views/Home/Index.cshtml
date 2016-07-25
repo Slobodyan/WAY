@@ -1,0 +1,35 @@
+﻿@model ArticleItemsViewModel
+
+<header class="jumbotron hero-spacer">
+	<h1>A Warm Welcome!</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
+	<p>
+		<a class="btn btn-primary btn-large">Call to action!</a>
+	</p>
+</header>
+
+<hr>
+<!-- Title -->
+<div class="row">
+	<div class="col-lg-12">
+		<h3>Latest articles</h3>
+	</div>
+</div>
+<!-- /.row -->
+<!-- Page Features -->
+<div class="row text-center">
+	@foreach(var item in Model.Items) {
+		<div class="col-md-3 col-sm-6 hero-feature">
+			<div class="thumbnail">
+				<img src="@item.PhotoUrl" alt="">
+				<div class="caption">
+					<h3>@item.Title</h3>
+					<p>@item.Description.Substring(0, item.Description.Length < 50 ? item.Description.Length : 50)</p>
+					<p>
+						<a href="@Url.Action(nameof(ArticleController.Details), nameof(Article), new { id = item.Id })" class="btn btn-primary">More Info</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	}
+</div>

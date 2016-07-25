@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8C965CC1-C473-4440-8ECD-6FC2DE24C372}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{64F5E264-C29E-4FFD-91C8-68B51BA2B0C1}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Web", "src\Web\Web.xproj", "{D7230551-9FBF-459E-9857-073619FBB23B}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{2173D9D6-856F-4B08-90AB-6E86641E1EDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7230551-9FBF-459E-9857-073619FBB23B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7230551-9FBF-459E-9857-073619FBB23B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7230551-9FBF-459E-9857-073619FBB23B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7230551-9FBF-459E-9857-073619FBB23B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2173D9D6-856F-4B08-90AB-6E86641E1EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2173D9D6-856F-4B08-90AB-6E86641E1EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2173D9D6-856F-4B08-90AB-6E86641E1EDD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2173D9D6-856F-4B08-90AB-6E86641E1EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2173D9D6-856F-4B08-90AB-6E86641E1EDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2173D9D6-856F-4B08-90AB-6E86641E1EDD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D7230551-9FBF-459E-9857-073619FBB23B} = {8C965CC1-C473-4440-8ECD-6FC2DE24C372}
+		{2173D9D6-856F-4B08-90AB-6E86641E1EDD} = {8C965CC1-C473-4440-8ECD-6FC2DE24C372}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://wayself.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Database\\Database.sqlproj
+		SccProjectTopLevelParentUniqueName1 = WAY.sln
+		SccProjectName1 = Database
+		SccLocalPath1 = Database
+		SccProjectUniqueName2 = src\\Web\\Web.xproj
+		SccProjectTopLevelParentUniqueName2 = WAY.sln
+		SccProjectName2 = src/Web
+		SccLocalPath2 = src\\Web
+	EndGlobalSection
+EndGlobal
